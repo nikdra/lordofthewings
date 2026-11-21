@@ -1,16 +1,16 @@
 from ecd import get_inputs, submit
 
 
-def parse_data(data):
+def parse_data(data: dict[str, str]):
     return data
 
-def part1(data):
+def part1(data) -> int:
     return 0
 
-def part2(data):
+def part2(data) -> int:
     return 0
 
-def part3(data):
+def part3(data) -> int:
     return 0
 
 if __name__ == "__main__":
