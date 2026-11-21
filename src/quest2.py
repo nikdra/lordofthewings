@@ -1,7 +1,7 @@
 from ecd import get_inputs, submit
 
 
-def parse_data(data: dict[str, str]):
+def parse_data(data: dict[str, str]) -> dict[str, list[list[tuple[str, str, str]]]]:
     return {k: [[(x[0], x[1], x[2]) for x in line.split()] for line in v.split('\n')] for k, v in data.items()}
 
 
@@ -10,7 +10,7 @@ I have to admit I got here iteratively, and this is not how you would approach t
 Parts 2 and 3 are generalizations of part 1, so the solution works for all three parts.
 After writing this, I realized that the question is asking for a simple topological graph sort, which is what you see here.
 """
-def checksum(line):
+def checksum(line) -> int:
     # dictionary representing the graph, where the key is the item and the value is a set of items that are "harder" than the key
     d: dict[str, set[str]] = {}
     # build the graph, add edges from the hard item to the soft item (which is the direction of the solution)
@@ -45,10 +45,10 @@ def checksum(line):
 def part1(data) -> int:
     return sum(checksum(line) for line in data)
 
-def part2(data):
+def part2(data) -> int:
     return sum(checksum(line) for line in data)
 
-def part3(data):
+def part3(data) -> int:
     return sum(checksum(line) for line in data)
 
 if __name__ == "__main__":

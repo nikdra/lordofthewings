@@ -1,5 +1,7 @@
-from src.quest2 import parse_data, part1, part2, part3
 import pytest
+
+from src.quest2 import parse_data, part1, part2, part3
+
 
 @pytest.fixture
 def sample_data():
