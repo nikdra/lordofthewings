@@ -60,7 +60,6 @@ def print_grid(grid: dict[tuple[int, int], str]) -> None:
         grid_str += f"{''.join(grid[(x, y)] for x in range(maxx + 1))}\n"
     print(grid_str)
 
-
 def apply_mask(grid: dict[tuple[int, int], str], maxx: int, maxy: int, p: tuple[int, int]) -> bool:
     """Apply the mask from the input on a point in the grid.
     Assumes grid starts at 0.
@@ -80,7 +79,6 @@ def apply_mask(grid: dict[tuple[int, int], str], maxx: int, maxy: int, p: tuple[
         return grid[p] == '#' and all(grid[n] in ('#', '@') for n in neighbors(*p, 2, False))
     return False
     
-
 def create_land(data: dict[tuple[int, int], str]) -> dict[tuple[int, int], str]:
     """Function to create a map with land (#) characters from the input grid.
     Turns all other points on the map to water characters (.).
