@@ -24,8 +24,6 @@ def test_part1(sample_data):
 
 def test_part2(sample_data):
     data = parse_data(sample_data)
-    # print(data['2'])
-    print(data['2'][1])
     assert part2(data['2']) == 6470
 
 def test_part3(sample_data):
